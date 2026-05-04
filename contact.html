@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Manhwa Kicks Contact</title>
+        <meta charset = "utf-8">
+        <link rel = "stylesheet" href = "project.css">
+    </head>
+
+    <body>
+        <header>
+            <img src = "logo.png" alt = "Manwha Kick Reviews logo" 
+            width="250" height="auto">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="genres.html">Genres</a>
+                <a href="products.html">Products</a>
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, suggestions, or would like to contribute to Manwha Kicks, please feel free to reach out to us!</p>
+
+                <form action="submit_contact_form.php" method="post">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="favorite">Favorite Genre:</label><br>
+                    <select id="favorite" name="favorite">
+                        <option value="">Select a genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romance">Romance</option>
+                    </select><br><br>
+
+                    <fieldset>
+                        <legend>What do you want to contact us about?:</legend>
+
+                        <input type="radio" name="topic" value="Review Request" required>
+                        <label for="review">Review Request</label><br>
+
+                        <input type="radio" name="topic" value="Recommendation" required>
+                        <label for="recommendation">Recommendation</label><br>
+
+                        <input type="radio" name="topic" value="General Question" required>
+                        <label for="general">General Question</label><br>
+                    </fieldset><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="6" cols="40" required></textarea><br><br>
+
+                    <label>
+                        <input type="checkbox" name="updates" value="yes">
+                        Send Me Site Updates!
+                    </label>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <a href="home.html">Home</a> |
+            <a href="ratings.html">Reviews</a> |
+            <a href="mission.html">Genres</a> |
+            <a href="contact.html">Contact</a>
+        </footer>
+    </body>
+</html>
+

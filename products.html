@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title> Manwha Kicks Products </title>
+	<meta charset = "utf-8">
+    <link rel="stylesheet" href="project.css">
+    <!-- Snipcart shopping cart -->
+    <link rel="preconnect" href="https://app.snipcart.com">
+    <link rel="preconnect" href="https://cdn.snipcart.com">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css">
+  </head>
+
+  <body>
+    <header>
+      <img src = "logo.png" alt = "Manwha Kick Reviews logo" width = "250px" height = "auto">
+      <nav>
+        <a href = "home.html">Home</a>
+        <a href = "reviews.html">Reviews</a>
+        <a href = "genres.html">Genres</a>
+        <a href = "products.html">Products</a>
+        <a href = "community.html">Community</a>
+        <a href = "about.html">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class = "trending">
+        <h2> Manwha Kicks Shop </h2>
+        <p> Grab some merch, posters, and physical volumes of your favorite manwha! </p>
+        <a href="#" class="snipcart-checkout">View Cart</a>
+      </div>
+
+      <div class = "products-grid">
+
+        <div class = "product-box">
+          <img src = "swordmaster.jpg" alt = "Swordmaster's Youngest Son Vol. 1" width = "180px" height = "auto">
+          <h3> Swordmaster's Youngest Son Vol. 1 </h3>
+          <p> $14.99 </p>
+          <button class="snipcart-add-item"
+            data-item-id="sm-vol1"
+            data-item-name="Swordmaster's Youngest Son Vol. 1"
+            data-item-price="14.99"
+            data-item-url="/products.html"
+            data-item-image="swordmaster.jpg">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class = "product-box">
+          <img src = "absolute regression.jpg" alt = "Absolute Regression Poster" width = "180px" height = "auto">
+          <h3> Absolute Regression Poster </h3>
+          <p> $9.99 </p>
+          <button class="snipcart-add-item"
+            data-item-id="ar-poster"
+            data-item-name="Absolute Regression Poster"
+            data-item-price="9.99"
+            data-item-url="/products.html"
+            data-item-image="absolute regression.jpg">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class = "product-box">
+          <img src = "regressed mercenary.jpg" alt = "Regressed Mercenary Vol. 1" width = "180px" height = "auto">
+          <h3> Regressed Mercenary Vol. 1 </h3>
+          <p> $14.99 </p>
+          <button class="snipcart-add-item"
+            data-item-id="rm-vol1"
+            data-item-name="Regressed Mercenary's Machinations Vol. 1"
+            data-item-price="14.99"
+            data-item-url="/products.html"
+            data-item-image="regressed mercenary.jpg">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class = "product-box">
+          <img src = "logo.png" alt = "Manwha Kicks T-Shirt" width = "180px" height = "auto">
+          <h3> Manwha Kicks Logo Tee </h3>
+          <p> $19.99 </p>
+          <button class="snipcart-add-item"
+            data-item-id="mk-tee"
+            data-item-name="Manwha Kicks Logo Tee"
+            data-item-price="19.99"
+            data-item-url="/products.html"
+            data-item-image="logo.png">
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+      <a href = "about.html">About</a>
+      <a href = "ratings.html">How Ratings Work</a>
+      <a href = "mission.html">Mission</a>
+      <a href = "contact.html">Contact</a>
+    </footer>
+
+    <!-- Snipcart scripts at bottom -->
+    <script src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
+    <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY_HERE"></div>
+
+  </body>
+</html>
