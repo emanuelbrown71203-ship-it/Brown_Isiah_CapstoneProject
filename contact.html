@@ -68,6 +68,34 @@
             </div>
         </main>
 
+        <script>
+  document.querySelector("form").addEventListener("submit", function(event) {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "") {
+      alert("Please enter your name.");
+      event.preventDefault();
+      return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+      alert("Please enter a valid email address.");
+      event.preventDefault();
+      return;
+    }
+
+    if (message.length < 10) {
+      alert("Your message needs to be at least 10 characters long.");
+      event.preventDefault();
+      return;
+    }
+
+    alert("Thanks for reaching out! We'll get back to you soon.");
+  });
+</script>
+
         <footer>
             <a href="home.html">Home</a> |
             <a href="ratings.html">Reviews</a> |
