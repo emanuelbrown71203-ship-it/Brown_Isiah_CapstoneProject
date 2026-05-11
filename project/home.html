@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title> Manwha Kicks Reviews </title>
+    <meta charset = "utf-8">
+	<meta name="description" content="Manwha Kicks Reviews - 
+	Your go-to spot for honest manhwa reviews, top trending picks, genre breakdowns, and recommendations for new readers and fans.">
+    <link rel="stylesheet" href="project.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <script>
+  alert("Welcome to Manwha Kicks! Check out the trending picks below 🥋");
+  </script>
+
+  <body>
+    <header>
+      <img src = "logo.png" alt = "Manwha Kick Reviews logo" width = "250px" height = "auto">
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="genres.html">Genres</a>
+        <a href="products.html">Products</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+    <div class = "trending">
+  		<h2> Trending Right Now! </h2>
+  		<div class="slideshow">
+    		<img src="swordmaster.jpg" alt="Swordmaster's Youngest Son cover" class="slide active">
+    		<img src="absolute regression.jpg" alt="Absolute Regression cover" class="slide">
+   		 	<img src="regressed mercenary.jpg" alt="The Regressed Mercenary's Machinations cover" class="slide">
+ 		</div>
+	</div>
+
+	<div class="box">
+    		<h2>Top Manwha Reviews</h2>
+   		 <table>
+       			 <caption>Popular Manwha Reviewed on Manwha Kicks</caption>
+       		 	<thead>
+           			 <tr>
+              				<th scope="col">Title</th>
+               				<th scope="col">Genre</th>
+                			<th scope="col">Rating</th>
+                			<th scope="col">Status</th>
+            			  </tr>
+        			</thead>
+        		<tbody>
+            			<tr>
+                			<td>Swordmaster’s Youngest Son</td>
+                			<td>Action / Fantasy</td>
+                			<td>9.5/10</td>
+                			<td>Ongoing</td>
+            			</tr>
+            			<tr>
+                		<td>Absolute Regression</td>
+                		<td>Action / Martial Arts</td>
+                		<td>9.0/10</td>
+                		<td>Ongoing</td>
+           		 </tr>
+           		<tr>
+                		<td>The Regressed Mercenary’s Machinations</td>
+                		<td>Action / Adventure</td>
+                		<td>8.8/10</td>
+                		<td>Ongoing</td>
+            		</tr>
+            		<tr>
+                		<td>Solo Leveling</td>
+                		<td>Action / Fantasy</td>
+                		<td>9.7/10</td>
+                		<td>Completed</td>
+            		</tr>
+        	  </tbody>
+    	      </table>
+      </div>
+
+      <div class = "left-column">
+
+	<div class = "box">
+	  <h2> Reviews </h2>
+	  <ul>
+	    <li> Top Rated </li>
+	    <li> Manga Reviews </li>
+	    <li> Manhwa Reviews </li>
+	    <li> Latest Reviews </li>
+	  </ul>
+	</div>
+
+	<div class = "box">
+	  <h2> Recommendations </h2>
+	  <ul>
+	    <li> By Genres </li>
+	    <li> By Tone </li>
+	    <li> By Length </li>
+	    <li> Hidden Gems </li>
+	  </ul>
+	</div>
+
+      </div>
+
+
+      <div class = "right-column">
+	
+	<div class = "box">
+	  <h2> Genres </h2>
+	  <ul>
+	    <li> Action </li>
+	    <li> Romance </li>
+	    <li> Fantasy </li>
+	    <li> Horror </li>
+	  </ul>
+	</div>
+
+	<div class = "box">
+	  <h2> Beginner's Area </h2>
+	  <ul>
+	    <li> Starter Reads </li>
+	    <li> Spoiler Free Reviews </li>
+	  </ul>
+	</div>
+	
+	<div class = "box">
+	  <h2> Community </h2>
+	  <ul>
+	    <li> User Ratings </li>
+	    <li> Comments </li>
+	    <li> Discussions </li>
+	  </ul>
+        </div>
+
+      </div>
+    </main>
+
+	<script>
+  			$(document).ready(function() {
+    		let slides = $(".slide");
+    		let current = 0;
+
+    		setInterval(function() {
+      		$(slides[current]).removeClass("active").fadeOut(500);
+      		current = (current + 1) % slides.length;
+      		$(slides[current]).addClass("active").fadeIn(500);
+    		}, 3000);
+  		});
+	</script>
+
+	<script>
+  function toggleRate() {
+    let popup = document.getElementById("rate-popup");
+    let toggle = document.getElementById("rate-toggle");
+    popup.classList.toggle("open");
+    toggle.classList.toggle("hidden");
+  }
+
+  let stars = document.querySelectorAll(".star");
+  let ratingText = document.getElementById("rating-text");
+  let currentRating = 0;
+
+  stars.forEach(function(star) {
+    // Fill stars on hover
+    star.addEventListener("mouseenter", function() {
+      let value = this.getAttribute("data-value");
+      stars.forEach(function(s) {
+        if (s.getAttribute("data-value") <= value) {
+          s.classList.add("hovered");
+        } else {
+          s.classList.remove("hovered");
+        }
+      });
+    });
+
+    // Click to set the rating
+    star.addEventListener("click", function() {
+      let value = this.getAttribute("data-value");
+      currentRating = value;
+
+      stars.forEach(function(s) {
+        if (s.getAttribute("data-value") <= value) {
+          s.classList.add("selected");
+        } else {
+          s.classList.remove("selected");
+        }
+      });
+
+      ratingText.textContent = "You rated this site " + value + " out of 5 stars!";
+    });
+  });
+
+  // When mouse leaves the rating area, clear hover
+  document.querySelector(".star-rating").addEventListener("mouseleave", function() {
+    stars.forEach(function(s) {
+      s.classList.remove("hovered");
+    });
+  });
+</script>
+
+<div id="rate-toggle" onclick="toggleRate()">★</div>
+
+	<div id="rate-popup">
+  		<h3>Rate This Site!</h3>
+  		<div class="star-rating">
+   			 <span class="star" data-value="1">★</span>
+    		<span class="star" data-value="2">★</span>
+    		<span class="star" data-value="3">★</span>
+    		<span class="star" data-value="4">★</span>
+    		<span class="star" data-value="5">★</span>
+  		</div>
+  		<p id="rating-text">Click a star to rate</p>
+  		<button onclick="toggleRate()" id="close-rate">Close</button>
+	</div>
+
+    <footer>
+      <a href = "about.html">About</a>
+      <a href = "ratings.html">How Ratings Work</a>
+      <a href = "mission.html">Mission</a>
+      <a href = "contact.html">Contact</a>
+    </footer>
+
+  </body>
+</html>
